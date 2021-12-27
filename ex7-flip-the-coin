@@ -17,11 +17,9 @@ def count11(seq):
 def count11(seq):
     pattern = tuple([1,1]); k = len(pattern)
     i = itertools.tee(sequence, k)
-    
     for j in range(k):
         for _ in range(j):
             next(i[j])
-
     count = 0
     for q in zip(*i):
         if pattern == q:
