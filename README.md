@@ -1,4 +1,4 @@
-# Coursework completed for Building AI
+# Elements of AI - Building AI
 
 Course website: https://buildingai.elementsofai.com
 
