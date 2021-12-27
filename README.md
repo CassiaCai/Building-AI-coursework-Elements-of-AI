@@ -1,3 +1,3 @@
-# building-ai-mooc-fi-coursework
+# Coursework completed for Building AI 
 
 Course website: https://buildingai.elementsofai.com
