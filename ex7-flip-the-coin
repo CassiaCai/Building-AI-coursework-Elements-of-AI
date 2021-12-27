@@ -1,0 +1,31 @@
+#!/usr/bin/env python
+# --------------------------------------------------------------------------------------------------------- Intermediate
+##### Write a program that counts the number of occurrences of "11" in an input sequence of zeros and ones. 
+##### The input of the program is just the sequence and it should return a single number, which is the number 
+##### of occurrences of "11".
+
+import itertools
+
+def count11(seq):
+     occur = []
+     for i in range(len(seq)):
+         if seq[i-1] == 1 and seq[i] == 1:
+             occur.append(1)
+     num_of_occur = len(occur)
+     return int(num_of_occur)
+
+def count11(seq):
+    pattern = tuple([1,1]); k = len(pattern)
+    i = itertools.tee(sequence, k)
+    
+    for j in range(k):
+        for _ in range(j):
+            next(i[j])
+
+    count = 0
+    for q in zip(*i):
+        if pattern == q:
+            count += 1
+    return count
+
+print(count11([0, 0, 1, 1, 1, 0])) # this should print 2
