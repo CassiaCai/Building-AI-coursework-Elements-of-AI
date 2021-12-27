@@ -1,0 +1,45 @@
+#!/usr/bin/env python
+# --------------------------------------------------------------------------------------------------------- Intermediate
+import numpy as np
+
+X = np.array([[66, 5, 15, 2, 500], 
+              [21, 3, 50, 1, 100], 
+              [120, 15, 5, 2, 1200]])
+y = np.array([250000, 60000, 525000])
+c = np.array([3000, 200 , -50, 5000, 100])    # coefficient values
+ 
+def squared_error(X, y, c):
+    predicted = []
+    predicted_price_temp = X*c
+    for i in range(len(predicted_price_temp)):
+        predicted.append(sum(predicted_price_temp[i]))
+    sse = float(sum((y - np.asarray(predicted))**2))
+    print(sse)
+
+squared_error(X, y, c)
+# --------------------------------------------------------------------------------------------------------- Advanced
+import numpy as np
+
+# data
+X = np.array([[66, 5, 15, 2, 500], 
+              [21, 3, 50, 1, 100], 
+              [120, 15, 5, 2, 1200]])
+y = np.array([250000, 60000, 525000])
+
+# alternative sets of coefficient values
+c = np.array([[3000, 200 , -50, 5000, 100], 
+              [2000, -250, -100, 150, 250], 
+              [3000, -100, -150, 0, 150]])   
+
+def find_best(X, y, c):
+    sse = []
+    for i in range(len(c)):
+        predicted = []
+        predicted_price_temp = X*c[i]
+        for i in range(len(predicted_price_temp)):
+            predicted.append(sum(predicted_price_temp[i]))
+        sse.append(float(sum((y - np.asarray(predicted))**2)))
+    index_min = min(range(len(sse)), key=sse.__getitem__)
+    print("the best set is set %d" % index_min)
+
+find_best(X, y, c)
