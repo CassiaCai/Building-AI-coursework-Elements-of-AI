@@ -37,9 +37,8 @@ def hidden_activation(z): # ReLU activation
     return z
 
 def output_activation(z):
-    return z 
-# #     # identity (linear) activation. fix this!
-# #         # return 0
+    return z # identity (linear) activation. fix this!
+
 x_test = [[72, 2, 25, 3, 450], [60, 3, 15, 1, 300], [74, 5, 10, 2, 100]]
 for item in x_test:
     h1_in = np.dot(item, w0)+b0 # this calculates the linear combination of inputs and weights. it is missing the bias term, fix it!
